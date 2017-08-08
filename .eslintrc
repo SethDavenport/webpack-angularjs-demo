@@ -1,0 +1,32 @@
+{
+  "extends": [
+    "airbnb",
+    "angular",
+    "plugin:jasmine/recommended"
+  ],
+  "plugins": [
+    "jasmine"
+  ],
+  "parser": "babel-eslint",
+  "env": {
+    "jasmine": true,
+    "browser": true
+  },
+  "rules": {
+    "strict": "off",
+    "no-underscore-dangle": "off",
+    "no-param-reassign": ["error", { "props": false }],
+    "angular/di": ["error", "$inject"],
+    "angular/typecheck-number": "off",
+    "angular/no-service-method": "off",
+    "import/no-extraneous-dependencies": "off",
+    "jasmine/no-spec-dupes": "off",
+    "no-confusing-arrow": "off",
+    "angular/log": "warn",
+    "global-require": "off",
+    "import/no-dynamic-require": "off"
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  }
+}

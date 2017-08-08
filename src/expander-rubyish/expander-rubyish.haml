@@ -1,0 +1,6 @@
+.expander-rubyish
+  .expander-rubyish__header.base-padding
+    .expander-rubyish__header--content{ :ng-transclude => 'header', :ng-style => '{ width: $ctrl.headerContentWidth }' }
+    %a.expander-rubyish__toggle{ :ng-click => '$ctrl.toggle()', :ng-style => '{ width: $ctrl.toggleWidth }' }
+      {{ $ctrl.getToggleText() }}
+  .expander-rubyish__body.base-padding{ :ng-transclude => 'body', :ng-show => '$ctrl.isExpanded()' }

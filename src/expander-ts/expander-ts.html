@@ -1,0 +1,21 @@
+<div class="expander-ts">
+  <div
+    class="expander-ts__header base-padding">
+    <div
+      class="expander-ts__header--content"
+      ng-transclude="header"
+      ng-style="{ width: $ctrl.headerContentWidth }">
+    </div>
+    <a
+      class="expander-ts__toggle"
+      ng-click="$ctrl.toggle()"
+      ng-style="{ width: $ctrl.toggleWidth }">
+      {{ $ctrl.getToggleText() }}
+    </a>
+  </div>
+  <div
+    class="expander-ts__body base-padding"
+    ng-transclude="body"
+    ng-show="$ctrl.isExpanded()">
+  </div>
+</div>

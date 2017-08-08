@@ -1,0 +1,14 @@
+logs
+*.log
+pids
+*.pid
+*.seed
+coverage
+dist
+node_modules
+npm-debug.log
+.DS_Store
+.awspublish-*
+TESTS-*.xml
+.vscode
+stats.json

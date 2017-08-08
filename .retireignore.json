@@ -1,0 +1,6 @@
+[
+  {
+    "path": "node_modules/webpack-dev-server",
+    "justification": "Devmode live reload server - not used in production"
+  }
+]

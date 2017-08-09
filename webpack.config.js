@@ -1,16 +1,12 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const SplitByPathPlugin = require('webpack-split-by-path');
 
 const optimizers = process.env.NODE_ENV === 'production' ? [
   // Minify JS output.
   new webpack.optimize.UglifyJsPlugin({ sourceMap: true }),
-
-  // Minify CSS output.
-  new OptimizeCssAssetsWebpackPlugin(),
 
   // Create a report about the generated JS bundles.
   new BundleAnalyzerPlugin({
@@ -36,7 +32,7 @@ module.exports = {
   plugins: [
     new SplitByPathPlugin([{
       name: 'vendor',
-      path: path.resolve(__dirname, 'node_modules')
+      path: path.resolve(__dirname, 'node_modules'),
     }]),
 
     // Don't output broken code; die instead.
@@ -83,12 +79,12 @@ module.exports = {
       // placed into a 'style' tag in index.html.
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
       // Transpile SCSS to CSS.
       {
         test: /\.(scss|sass)$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
       },
       // Transpile TypeScript to ES5.
       {
